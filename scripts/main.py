@@ -1,3 +1,5 @@
+import pandas as pd
+from generate_data import generate_transactions, save_to_csv
 from ingest import get_latest_file, read_transaaction_file
 from validate import validate_data
 from transform import transform_data
@@ -23,3 +25,10 @@ def run_pipeline():
 
 if __name__ == "__main__":
     run_pipeline()
+
+
+# If you want main.py to always generate a new transaction file automatically, you can add this to the top of main.py:
+
+# print("🧪 Generating new transaction file...")
+# df_generated = generate_transactions(100)  # or any number you want
+# save_to_csv(df_generated)
